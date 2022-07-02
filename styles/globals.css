@@ -1,16 +1,17 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --vt-c-primary: #0070f3;
+  --vt-c-secondary: #1ea8ff;
+  --vt-c-accent: #83ddff;
+
+  background: #fff;
 }
