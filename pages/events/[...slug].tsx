@@ -1,19 +1,15 @@
-import { Title } from '@/components/Typography'
-import { Fade } from '@/components/UI/Transition'
-import { Button } from 'antd'
-import { useState } from 'react'
-import { Animate } from 'react-simple-animate'
+import { EventList } from '@/components/Events/EventList'
+import { filterEvents } from '@/data'
+import { useRouter } from 'next/router'
 
 const FilteredEvents = () => {
-  const [visible, setVisible] = useState(false)
+  const { query } = useRouter()
+  const [year, month] = query.slug as string[]
+  const events = filterEvents({ year, month })
 
   return (
     <div>
-      <Title level={1}></Title>
-      <Fade play={visible}>
-        <h1>hello</h1>
-      </Fade>
-      <Button onClick={() => setVisible(v => !v)}>toggle</Button>
+      <EventList items={events}></EventList>
     </div>
   )
 }

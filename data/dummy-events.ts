@@ -1,5 +1,6 @@
 import { EventItem } from '@/typings/event'
 import Mock from 'mockjs'
+import dayjs from 'dayjs'
 
 // eslint-disable-next-line no-unused-vars
 const arrayGen = <Fn extends (...args: any[]) => any>(
@@ -109,4 +110,13 @@ export const dummyEvents: EventItem[] = [
 
 export function findEventById(id: string) {
   return dummyEvents.find(item => item.id === id)
+}
+
+export function filterEvents({ year, month }: { year: string; month: string }) {
+  console.log('year: ', year, month)
+  return dummyEvents.filter(item => {
+    const date = dayjs(item.date)
+    console.log('date: ', date.month(), date.year())
+    return String(date.year()) === year && String(date.month() + 1) === month
+  })
 }
