@@ -1,6 +1,7 @@
 import { EventItem } from '@/typings/event'
 import Mock from 'mockjs'
 
+// eslint-disable-next-line no-unused-vars
 const arrayGen = <Fn extends (...args: any[]) => any>(
   template: Fn,
   count: number = 1,

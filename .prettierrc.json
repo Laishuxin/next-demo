@@ -1,0 +1,9 @@
+{
+  "printWidth": 80,
+  "semi": false,
+  "trailingComma": "all",
+  "jsxSingleQuote": true,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf"
+}

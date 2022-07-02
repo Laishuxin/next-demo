@@ -1,0 +1,6 @@
+.swc
+.next
+.husky
+.vscode
+node_modules
+public
