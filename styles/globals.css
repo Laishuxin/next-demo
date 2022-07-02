@@ -15,5 +15,7 @@ ul {
   --vt-c-secondary: #1ea8ff;
   --vt-c-accent: #83ddff;
 
-  background: #fff;
+  --vt-header-height: 48px;
+  --vt-footer-height: 48px;
+  --vt-sx: 48px;
 }

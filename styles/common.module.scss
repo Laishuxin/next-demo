@@ -1,0 +1,19 @@
+$prefix: 'vt-';
+
+.vt-flex {
+  display: flex;
+}
+
+.vt-flex-column {
+  @extend .vt-flex;
+}
+
+@for $size from 0 to 12 {
+  .#{$prefix}m-#{$size} {
+    margin: #{$size} + 'px';
+  }
+}
+
+.vt-clickable {
+  cursor: pointer;
+}

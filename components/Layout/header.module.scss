@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  flex-shrink: 0;
+  height: var(--vt-header-height);
+  padding: 0 var(--vt-sx);
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.row {
+  width: 100%;
+}

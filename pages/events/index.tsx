@@ -1,31 +1,24 @@
-import { Button } from 'antd'
 import { dummyEvents } from '@/data/index'
-import { useState } from 'react'
-import { Title, Paragraph, Text } from '@/components/Typography'
-import { Image } from 'antd'
+import { EventList } from '@/components/Events/EventList'
+import { Fragment } from 'react'
+import { EventSearch, EventSearchProps } from '@/components/Events/EventSearch'
+import { useRouter } from 'next/router'
 
 const AllEventPage = () => {
-  const [showData, setShowData] = useState(false)
-
   // console.log('dummyEvents: ', dummyEvents)
-  const onClick = () => {
-    setShowData(true)
+
+  const { push } = useRouter()
+
+  const handleSubmit: EventSearchProps['onSubmit'] = ({ year, month }) => {
+    push({
+      pathname: `/events/${year}/${month}`,
+    })
   }
   return (
-    <div>
-      <h1>All events</h1>
-      <Button onClick={onClick}>button</Button>
-
-      {showData
-        ? dummyEvents.map((event) => (
-            <li key={event.id}>
-              <Title level={1}>{event.title}</Title>
-              <Paragraph>{event.description}</Paragraph>
-              <Image preview={false} alt={event.title} src={event.image} />
-            </li>
-          ))
-        : null}
-    </div>
+    <Fragment>
+      <EventSearch onSubmit={handleSubmit} />
+      <EventList items={dummyEvents} />
+    </Fragment>
   )
 }
 
